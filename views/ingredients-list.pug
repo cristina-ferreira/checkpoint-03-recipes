@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 ingredients list
+
+  ul
+    each ingredient in ingredients
+      li
+        h3= ingredient.name
+        a(class='button' href=`/ingredient/${ingredient._id}/delete`) (delete)

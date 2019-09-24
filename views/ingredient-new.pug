@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 new ingredient
+
+  a(href="/") Home
+  p(style={color: "red"})= message
+
+  form(action="/ingredients/new", method="post")
+    div
+        input(type="text", name="name" placeholder="name")
+    div
+        input(type="submit", value="Save")
+
+ 

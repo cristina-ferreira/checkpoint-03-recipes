@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 new recipe
+
+  a(href="/") Home
+  p(style={color: "red"})= message
+
+  form(action="/recipes/new", method="post")
+    div
+        input(type="text", name="name" placeholder="name")
+    div
+        input(type="number", name="time" placeholder="time")
+    div
+        input(type="text", name="image_url" placeholder="https://...")
+    div
+        select(name="ingredients", multiple)
+            each ingredient in ingredients
+                option(value=ingredient._id)= ingredient.name
+    div
+        input(type="submit", value="Save")
+

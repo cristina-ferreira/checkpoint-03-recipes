@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 recipes list
+  div
+    a(href="/recipes/new") new recipe
+  div
+    a(href="/ingredients/new") new ingredient
+
+  each recipe in recipes
+    a(href=`/recipe/${recipe._id}`)
+      div
+        h3= recipe.name
+        div(style={ width: '60px' })
+          img(src=recipe.image_url, alt=recipe.name style={ width: '100%' })

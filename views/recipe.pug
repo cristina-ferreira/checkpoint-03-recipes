@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h3= recipe.name
+    p= recipe.time
+    div(style={ width: '50vw' })
+        img(src=recipe.image_url, alt=recipe.name style={ width: '100%' })
+
+    h4 Doses (ingredients)
+    div
+        each dose in doses
+            p= dose.ingredient.name
+    a(class='button' href=`/recipe/${recipe._id}/delete`) (delete)
+    a(class='button' href=`/recipe/${recipe._id}/edit`) (edit)
+    a(class='button' href=`/`) (home)
